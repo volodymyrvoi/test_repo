@@ -27,7 +27,7 @@ def make_plot(result, name, fill_between=True):
     ax1.legend()
     ax1.set_xlabel('time')
     ax1.set_ylabel('Значение')
-    ax1.set_title(f"Прогноз boal_dem {name}")
+    ax1.set_title(f"Прогноз boal_gen {name}")
 
     ax2 = plt.subplot(2, 1, 2)
     ax2.plot(result['time'], result['f_boal_dem'], label='fc_boal_dem', color='blue')
@@ -46,8 +46,5 @@ def make_plot(result, name, fill_between=True):
     plt.show()
 
 
-def do(a,b):
-  c=0
-  for i in range(len(a)):
-    if a[i]==b[i]: c+=1
-  return c
+def do(a, b):
+    return sum(1 for i in range(len(a)) if a[i] == b[i])
