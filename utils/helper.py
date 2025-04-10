@@ -50,15 +50,14 @@ def do(a, b):
     return sum(1 for i in range(len(a)) if a[i] == b[i])
 
 
-def doStuff(x,y,z=None):
- a=0
- while a<10:
-  if x>5:
-   x=x-1
-  elif y<3:
-   y+=2
-  else:
-   print("hi")
-   break
- return x+y+z
-
+def doStuff(x, y, z=0):
+    a = 0
+    while a < 10:
+        if x > 5:
+            x -= 1
+        elif y < 3:
+            y += 2
+        else:
+            print("hi")
+            break
+    return x + y + z
