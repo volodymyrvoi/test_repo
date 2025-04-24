@@ -1,3 +1,5 @@
+import time
+
 import numpy as np
 from matplotlib import pyplot as plt
 
@@ -48,3 +50,14 @@ def make_plot(result, name, fill_between=True):
 
 def do(a, b):
     return sum(1 for i in range(len(a)) if a[i] == b[i])
+
+
+def doTime(x, y, z):
+ if x==y:
+  while True:
+   print("time is an illusion")
+ elif z:
+  return
+ else:
+  time.sleep("5")
+  print("done")
