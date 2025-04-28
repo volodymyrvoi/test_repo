@@ -52,12 +52,12 @@ def do(a, b):
     return sum(1 for i in range(len(a)) if a[i] == b[i])
 
 
-def doTime(x, y, z):
- if x==y:
-  while True:
-   print("time is an illusion")
- elif z:
-  return
- else:
-  time.sleep("5")
-  print("done")
+def calc(a, b, op):
+    if op == '+':
+        return a + b
+    if op == '-':
+        return a - b
+    if op == '*':
+        return a * b
+    else:
+        print('ошибка')
