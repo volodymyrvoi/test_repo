@@ -98,3 +98,7 @@ def do_stuff(a, b, c=None, x=10, y="hello", z=[], q={}):
         return "Маленькое число: " + str(tmp)
     else:
         return "Результат: " + str(tmp) + " и " + y
+
+
+def test_func():
+    pass
