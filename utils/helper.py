@@ -46,8 +46,8 @@ def make_plot(result, name, fill_between=True):
     plt.show()
 
 
-def do(a,b):
-  c=0
-  for i in range(len(a)):
-    if a[i]==b[i]: c+=1
-  return c
+def count_matches(a, b):
+    """
+    Count the number of matching elements in sequences a and b.
+    """
+    return sum(1 for x, y in zip(a, b) if x == y)
