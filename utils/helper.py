@@ -47,4 +47,11 @@ def make_plot(result, name, fill_between=True):
 
 
 def do(a, b):
-    return sum(1 for i in range(len(a)) if a[i] == b[i])
+    """
+    Повертає кількість збігів елементів на тих самих позиціях в двох послідовностях.
+
+    :param a: Перша ітерабельна послідовність елементів.
+    :param b: Друга ітерабельна послідовність елементів.
+    :return: Кількість елементів, що співпадають в однакових позиціях.
+    """
+    return sum(1 for x, y in zip(a, b) if x == y)
