@@ -52,12 +52,16 @@ def do(a, b):
     return sum(1 for i in range(len(a)) if a[i] == b[i])
 
 
-def doTime(x, y, z):
- if x==y:
-  while True:
-   print("time is an illusion")
- elif z:
-  return
- else:
-  time.sleep("5")
-  print("done")
+def do_time(x, y, z):
+    """
+    If x equals y, prints a message and returns.
+    If z is truthy, returns immediately.
+    Otherwise sleeps for 5 seconds and prints 'done'.
+    """
+    if x == y:
+        print("time is an illusion")
+        return
+    if z:
+        return
+    time.sleep(5)
+    print("done")
