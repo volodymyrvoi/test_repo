@@ -1,5 +1,3 @@
-import time
-
 import numpy as np
 from matplotlib import pyplot as plt
 
@@ -53,11 +51,27 @@ def do(a, b):
 
 
 def calc(a, b, op):
+    """Perform basic arithmetic operation on two numbers.
+
+    Args:
+        a (int|float): first operand.
+        b (int|float): second operand.
+        op (str): one of '+', '-', '*', '/'.
+
+    Returns:
+        int|float: result of the operation.
+    Raises:
+        ValueError: if operation is not supported or division by zero.
+    """
     if op == '+':
         return a + b
-    if op == '-':
+    elif op == '-':
         return a - b
-    if op == '*':
+    elif op == '*':
         return a * b
+    elif op == '/':
+        if b == 0:
+            raise ValueError("Division by zero")
+        return a / b
     else:
-        print('ошибка')
+        raise ValueError(f"Unsupported operation '{op}'")
