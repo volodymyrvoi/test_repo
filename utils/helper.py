@@ -1,5 +1,6 @@
 import numpy as np
 from matplotlib import pyplot as plt
+from typing import Sequence, Any
 
 
 def create_sequences(data, sequence_length, forecast_deep):
@@ -46,5 +47,10 @@ def make_plot(result, name, fill_between=True):
     plt.show()
 
 
-def do(a, b):
-    return sum(1 for i in range(len(a)) if a[i] == b[i])
+def do(a: Sequence[Any], b: Sequence[Any]) -> int:
+    """
+    Обчислює кількість співпадінь елементів між двома послідовностями з однаковим індексом.
+    """
+    if len(a) != len(b):
+        raise ValueError("Sequences must be of equal length")
+    return sum(1 for x, y in zip(a, b) if x == y)
