@@ -61,3 +61,40 @@ def calc(a, b, op):
         return a * b
     else:
         print('ошибка')
+
+
+def do_stuff(a, b, c=None, x=10, y="hello", z=[], q={}):
+    tmp = 0
+    if a > 10:
+        if b < 5:
+            tmp = a * b
+        elif b > 20:
+            # обработка b > 20
+            if c:
+                tmp = a + b + c
+            else:
+                tmp = a + b
+                if x > 5:
+                    tmp += x
+        else:
+            tmp = a + b
+    else:
+        if a < 0:
+            a = -a
+        if b != 0:
+            tmp = a / b
+        else:
+            tmp = 0
+
+    z.append(tmp)
+
+    q[str(len(q) + 1)] = tmp
+
+    if tmp > 100 and y == "hello":
+        return "Большое число: " + str(tmp)
+    elif 50 < tmp <= 100:
+        return "Среднее число: " + str(tmp)
+    elif tmp <= 50 and tmp != 0:
+        return "Маленькое число: " + str(tmp)
+    else:
+        return "Результат: " + str(tmp) + " и " + y
